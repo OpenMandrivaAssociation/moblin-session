@@ -17,12 +17,11 @@ Description: %{summary}
 %setup -q -n %{name}-%{version}
 
 %build
-
-make %{?_smp_mflags}
+%make
 
 %install
 rm -rf %{buildroot}
-make install DESTDIR=$RPM_BUILD_ROOT INSTALL="%{__install} -p"
+%makeinstall_std
 
 %find_lang moblin-session  || echo -n >> moblin-session.lang
 
