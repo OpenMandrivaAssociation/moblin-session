@@ -23,7 +23,7 @@ Description: %{summary}
 rm -rf %{buildroot}
 %makeinstall_std
 
-%find_lang moblin-session  || echo -n >> moblin-session.lang
+%find_lang %{name}
 
 mkdir -p %{buildroot}/%{_datadir}/doc/%{name}-%{version}
 for f in `ls %{buildroot}/%{_datadir}/doc/`; do
@@ -35,7 +35,7 @@ done
 %clean
 rm -rf %{buildroot}
 
-%files -f moblin-session.lang
+%files -f %{name}.lang
 %defattr(-,root,root,-)
 %doc COPYING
 %{_bindir}/startmoblin
