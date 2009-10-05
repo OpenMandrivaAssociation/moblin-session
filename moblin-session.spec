@@ -1,7 +1,7 @@
 Name: moblin-session
 Summary: Moblin User Experience Startup Scripts
 Group: User Interface/X
-Version: 0.12
+Version: 0.13
 License: GPLv2
 URL: http://www.moblin.org
 Release: %mkrel 1
