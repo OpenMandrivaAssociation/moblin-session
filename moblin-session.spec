@@ -4,7 +4,7 @@ Group: Graphical desktop/Other
 Version: 0.13
 License: GPLv2
 URL: http://www.moblin.org
-Release: %mkrel 1
+Release: %mkrel 2
 Source0: http://git.moblin.org/cgit.cgi/%{name}/snapshot/%{name}-%{version}.tar.bz2
 Patch0: moblin-session-0.13-path.patch
 Patch1: moblin-session-0.13-gconf.patch
