@@ -6,6 +6,7 @@ License: GPLv2
 URL: http://www.moblin.org
 Release: %mkrel 1
 Source0: http://git.moblin.org/cgit.cgi/%{name}/snapshot/%{name}-%{version}.tar.bz2
+Patch0: moblin-session-0.13-path.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 Requires: telepathy-mission-control
@@ -15,6 +16,7 @@ Description: %{summary}
 
 %prep
 %setup -q -n %{name}-%{version}
+%patch0 -p0 -b .session
 
 %build
 %make
