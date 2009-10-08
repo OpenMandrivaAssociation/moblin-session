@@ -4,7 +4,7 @@ Group: Graphical desktop/Other
 Version: 0.13
 License: GPLv2
 URL: http://www.moblin.org
-Release: %mkrel 2
+Release: %mkrel 3
 Source0: http://git.moblin.org/cgit.cgi/%{name}/snapshot/%{name}-%{version}.tar.bz2
 Patch0: moblin-session-0.13-path.patch
 Patch1: moblin-session-0.13-gconf.patch
@@ -20,6 +20,13 @@ Description: %{summary}
 %setup -q -n %{name}-%{version}
 %patch0 -p0 -b .session
 %patch1 -p1 -b .gconf
+cat > 10moblin <<EOF
+NAME=Moblin
+DESC=Moblin Desktop Environment
+EXEC=%{_sysconfdir}/xdg/moblin/xinitrc
+SCRIPT:
+exec %{_sysconfdir}/xdg/moblin/xinitrc
+EOF
 
 %build
 %make
@@ -27,6 +34,11 @@ Description: %{summary}
 %install
 rm -rf %{buildroot}
 %makeinstall_std
+
+rm -f %{buildroot}%{_datadir}/xsessions/moblin.desktop
+install -d %{buildroot}%{_sysconfdir}/X11/wmsession.d
+install -m755 10moblin %{buildroot}%{_sysconfdir}/X11/wmsession.d/
+chmod 755 %{buildroot}%{_sysconfdir}/xdg/moblin/xinitrc
 
 %find_lang %{name}
 
@@ -45,4 +57,4 @@ rm -rf %{buildroot}
 %doc COPYING
 %{_bindir}/startmoblin
 %{_sysconfdir}/xdg/moblin/xinitrc
-%{_datadir}/xsessions/moblin.desktop
+%{_sysconfdir}/X11/wmsession.d/10moblin
