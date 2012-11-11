@@ -1,0 +1,13 @@
+diff -p -up moblin-session-0.13/moblin-xinitrc.gconf moblin-session-0.13/moblin-xinitrc
+--- moblin-session-0.13/moblin-xinitrc.gconf	2009-10-07 19:49:12.000000000 +0200
++++ moblin-session-0.13/moblin-xinitrc	2009-10-07 19:50:44.000000000 +0200
+@@ -34,6 +34,9 @@ fi
+ # load local modmap
+ test -r $HOME/.Xmodmap && xmodmap $HOME/.Xmodmap
+ 
++# Use custom gconf2 path in moblin session:
++export GCONF_DEFAULT_SOURCE_PATH=/etc/gconf/2/moblin.path
++
+ # Set the env variables of Input Method
+ export GTK_IM_MODULE=scim-bridge
+ export CLUTTER_IM_MODULE=scim-bridge

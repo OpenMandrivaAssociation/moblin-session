@@ -1,0 +1,30 @@
+--- moblin-xinitrc.old	2009-10-07 14:14:39.000000000 -0300
++++ moblin-xinitrc	2009-10-07 14:15:08.000000000 -0300
+@@ -81,19 +81,19 @@
+ fi
+ } &
+ 
+-ionice -n7 /usr/libexec/mission-control &
++ionice -n7 /usr/lib/mission-control-5 &
+ #ionice -n7 nautilus --no-desktop --no-default-window &
+ 
+ # Make OO.o use gtk+ theming
+ export OOO_FORCE_DESKTOP=gnome
+ 
+ # Start panels in advance
+-/usr/libexec/moblin-panel-myzone &
+-/usr/libexec/moblin-panel-status &
+-/usr/libexec/moblin-panel-people &
+-/usr/libexec/moblin-panel-internet &
+-/usr/libexec/moblin-panel-media &
+-/usr/libexec/moblin-panel-pasteboard &
+-/usr/libexec/moblin-panel-applications &
++/usr/lib/moblin-panel-myzone &
++/usr/lib/moblin-panel-status &
++/usr/lib/moblin-panel-people &
++/usr/lib/moblin-panel-internet &
++/usr/lib/moblin-panel-media &
++/usr/lib/moblin-panel-pasteboard &
++/usr/lib/moblin-panel-applications &
+ 
+ mutter --sm-disable
