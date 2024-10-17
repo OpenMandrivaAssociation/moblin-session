@@ -3,7 +3,7 @@ Summary: Moblin User Experience Startup Scripts
 Group: Graphical desktop/Other
 Version: 0.13
 License: GPLv2
-URL: http://www.moblin.org
+URL: https://www.moblin.org
 Release: %mkrel 4
 Source0: http://git.moblin.org/cgit.cgi/%{name}/snapshot/%{name}-%{version}.tar.bz2
 Patch0: moblin-session-0.13-path.patch
